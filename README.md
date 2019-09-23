@@ -1,2 +1,2 @@
 # Programovací kroužek na VDA
-Každé ponděli od 14:30
+Každé ponděli od 14:45
