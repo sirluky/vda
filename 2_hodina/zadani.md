@@ -11,3 +11,6 @@
 
 # úkol BONUS:
 * Vytvořte aplikaci TODO. Jedná se o takovou aplikaci, která bude umět obsluhovat seznam poznámek. Takže do něj budeme moct vkládat poznámky, upravovat poznámky a mazat.
+
+
+https://github.com/lerix/vda
