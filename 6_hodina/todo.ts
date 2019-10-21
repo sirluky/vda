@@ -1,7 +1,14 @@
-let todos = [];//[{ text: "", splneno: false, upravit: false }]
+interface myTodo {
+  text?: string,
+  splneno?: boolean,
+  upravit?: boolean
+}
+let todos: myTodo[] = [];
+
+todos.push({text: "ahoj", splneno: true, upravit: false})
 
 function vypis() {
-  console.log(todos)
+  console.log(todos);
   let seznamHodnoty = "<table>";
   for (let i = 0; i < todos.length; i++) {
     seznamHodnoty += "<tr>" + vytvorPolozku(i) + "</tr>" ;
@@ -11,23 +18,33 @@ function vypis() {
 }
 
 function pridat() {
-  if (document.getElementById("textInput").value !== "") {
+  let element: HTMLInputElement = document.getElementById("textInput") as HTMLInputElement;
+  if (element.value !== "") {
     const noveTodo = {
-      text: document.getElementById("textInput").value,
-      splneno: false
+      text: element.value,
+      splneno: false,
+      upravit: false
     };
     todos.push(noveTodo);
-    document.getElementById("textInput").value = "";
+    element.value = "";
     vypis();
+
+    vypisTodo(noveTodo);
   }
 }
 
-function odebrat(i) {
+// fce ktera vypisuje todo
+function vypisTodo(item: myTodo): myTodo {
+  console.log(item);
+  return item;
+}
+
+function odebrat(i: number) {
   todos.splice(i, 1);
   vypis();
 }
 
-function upravit(i) {
+function upravit(i: number) {
   if (todos[i].upravit) {
     todos[i].text = document.getElementById("textUpravit").value;
   }
@@ -36,12 +53,12 @@ function upravit(i) {
   vypis();
 }
 
-function splneno(i) {
-  todos[i].splneno = !todos[i].splneno;
+function splneno(index: number) {
+  todos[index].splneno = !todos[index].splneno;
   vypis();
 }
 
-function vytvorPolozku(i) {
+function vytvorPolozku(i: number): string {
   let polozka = "<td><li>";
 
   if (todos[i].upravit) {
