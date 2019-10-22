@@ -1,13 +1,16 @@
+// na konci radku interface by mely byt stredniky, ale carky take funguji
 interface myTodo {
-  text?: string,
-  splneno?: boolean,
-  upravit?: boolean
+  text?: string;
+  splneno?: boolean;
+  upravit?: boolean;
 }
 let todos: myTodo[] = [];
 
-todos.push({text: "ahoj", splneno: true, upravit: false})
+// pri vytvareni objektu uz klasicky pouzivame carky
+todos.push({text: "ahoj", splneno: true, upravit: false});
 
-function vypis() {
+// navratova hodnota f-ce se pise na konec hlavicky, typy mohou byt void, number, string, boolean,... i nas typ myTodo
+function vypis(): void {
   console.log(todos);
   let seznamHodnoty = "<table>";
   for (let i = 0; i < todos.length; i++) {
@@ -17,7 +20,7 @@ function vypis() {
   document.getElementById("seznam").innerHTML = seznamHodnoty;
 }
 
-function pridat() {
+function pridat(): void {
   let element: HTMLInputElement = document.getElementById("textInput") as HTMLInputElement;
   if (element.value !== "") {
     const noveTodo = {
@@ -33,18 +36,18 @@ function pridat() {
   }
 }
 
-// fce ktera vypisuje todo
+// f-ce ktera vypisuje a vrati todoItem
 function vypisTodo(item: myTodo): myTodo {
   console.log(item);
   return item;
 }
 
-function odebrat(i: number) {
+function odebrat(i: number): void {
   todos.splice(i, 1);
   vypis();
 }
 
-function upravit(i: number) {
+function upravit(i: number): void {
   if (todos[i].upravit) {
     todos[i].text = document.getElementById("textUpravit").value;
   }
@@ -53,7 +56,7 @@ function upravit(i: number) {
   vypis();
 }
 
-function splneno(index: number) {
+function splneno(index: number): void {
   todos[index].splneno = !todos[index].splneno;
   vypis();
 }

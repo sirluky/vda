@@ -1,4 +1,5 @@
 var todos = [];
+// pri vytvareni objektu uz klasicky pouzivame carky
 todos.push({ text: "ahoj", splneno: true, upravit: false });
 function vypis() {
     console.log(todos);
@@ -23,7 +24,7 @@ function pridat() {
         vypisTodo(noveTodo);
     }
 }
-// fce ktera vypisuje todo
+// f-ce ktera vypisuje todoItem
 function vypisTodo(item) {
     console.log(item);
     return item;
