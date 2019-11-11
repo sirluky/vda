@@ -50,16 +50,16 @@ function snake(width, height, color, x, y) {
 function updateGameArea() {
     myGameArea.clear();
     if (myGameArea.key && myGameArea.key == 37) {
-        myGamePiece.left();
+        snake.left();
     }
     if (myGameArea.key && myGameArea.key == 39) {
-        myGamePiece.right();
+        snake.right();
     }
     if (myGameArea.key && myGameArea.key == 38) {
-        myGamePiece.up();
+        snake.up();
     }
     if (myGameArea.key && myGameArea.key == 40) {
-        myGamePiece.down();
+        snake.down();
     }
-    myGamePiece.update();
+    snake.update();
 }
