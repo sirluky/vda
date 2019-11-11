@@ -60,7 +60,6 @@ class Had {
 			this.y = 0;
 		}
 		if (0 > this.x) {
-			console.log(this.x);
 			this.x = SIRKAPOLE - 1;
 		}
 		if (0 > this.y) {
