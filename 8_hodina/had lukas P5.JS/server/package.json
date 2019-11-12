@@ -1,0 +1,19 @@
+{
+  "name": "had-lukas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^12.12.7",
+    "express": "^4.17.1",
+    "http": "0.0.0",
+    "socket.io": "^2.3.0",
+    "ts-node": "^8.5.0",
+    "typescript": "^3.7.2"
+  }
+}
