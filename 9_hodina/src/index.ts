@@ -1,5 +1,6 @@
 var snake: Snake;
 var myGameArea: MyGameArea;
+var eats: pozitionType[] = [];
 
 function startGame() {
     myGameArea = new MyGameArea();
@@ -9,7 +10,7 @@ function startGame() {
         myGameArea.key = e.keyCode;
     })
 
-    snake = new Snake(30, 30, "black", 100, 100);
+    snake = new Snake(30, 30, "green", 90, 90);
 }
 
 function updateGameArea() {
@@ -39,41 +40,82 @@ class MyGameArea {
         this.context = this.canvas.getContext("2d");
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
         setInterval(updateGameArea, 1000);
-
+        setInterval(() =>
+            eats.push({ x: getRandomInt(1, 20) * 30, y: getRandomInt(1, 20) * 30 })
+            , 10000);
     }
     clear() {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
     }
 }
 
+function getRandomInt(min: number, max: number) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+}
+
+function ifContent(a: pozitionType, b: pozitionType) {
+    if (a.x == b.x && a.y == b.y) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+interface pozitionType {
+    x: number;
+    y: number;
+}
+
 class Snake {
     width: number;
     height: number;
-    x: number;
-    y: number;
+    aktual: pozitionType;
     color: string;
+    length: number;
+    history: pozitionType[];
 
     constructor(width: number, height: number, color: string, x: number, y: number) {
         this.width = width;
         this.height = height;
-        this.x = x;
-        this.y = y;
+        this.aktual = { x, y };
+        this.length = 0;
+        this.color = color;
+        this.history = [];
     }
     update(ctx: any) {
+        console.log(this.history);
+
         ctx.fillStyle = this.color;
-        ctx.fillRect(this.x, this.y, this.width, this.height);
+        ctx.fillRect(this.aktual.x, this.aktual.y, this.width, this.height);
+
+        for (let i: number = 0; i < this.length; i++) {
+            let point = this.history[this.history.length - i - 1];
+            ctx.fillRect(point.x, point.y, this.width, this.height);
+        }
+
+        for (let eat of eats) {
+            ctx.fillStyle = "red";
+            ctx.fillRect(eat.x, eat.y, this.width, this.height);
+        }
     }
     up() {
-        this.y -= 30;
+        this.history.push({ x: this.aktual.x, y: this.aktual.y });
+        this.aktual.y -= 30;
+        this.length++;
     }
     down() {
-        this.y += 30;
+        this.history.push({ x: this.aktual.x, y: this.aktual.y });
+        this.aktual.y += 30;
     }
     left() {
-        this.x -= 30;
+        this.history.push({ x: this.aktual.x, y: this.aktual.y });
+        this.aktual.x -= 30;
     }
     right() {
-        this.x += 30;
+        this.history.push({ x: this.aktual.x, y: this.aktual.y });
+        this.aktual.x += 30;
     }
 }
 
