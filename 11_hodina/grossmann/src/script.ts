@@ -9,16 +9,37 @@ class Canvas {
         this.width = width;
         this.height = height;
     }
-}
 
-class Arena {
-    arenaBGColor: string;
-    
-    constructor() {
+    draw() {
+
+    }
+
+    clearCanvas() {
 
     }
 }
 
-class Snake {
+class Arena {
+    arenaBGColor: string;
+    arenaBorderColor: string;
+    constructor(arenaBGColor: string, arenaBorderColor: string ) {
+      this.arenaBGColor = arenaBGColor;
+      this.arenaBorderColor = arenaBorderColor;
+    }
 
+    wrapArena() {
+
+        
+    }
+}
+
+class Snake {
+    snakeLength: number;
+    constructor(snakeLength: number) {
+        this.snakeLength = snakeLength;
+    }
+
+    snakeMovement() {
+
+    }
 }
