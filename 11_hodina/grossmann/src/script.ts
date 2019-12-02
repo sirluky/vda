@@ -1,4 +1,15 @@
 let canv: Canvas;
+let arena: Arena;
+let snake: Snake;
+
+function startGame() {
+    canv =
+        new Canvas(400, 400);
+    arena =
+        new Arena('orange');
+    snake = 
+        new Snake(4);
+}
 
 class Canvas {
     canvas = document.createElement('canvas');
@@ -10,8 +21,9 @@ class Canvas {
         this.height = height;
     }
 
-    draw() {
-
+    draw(color: string, startX: number, startY: number, sizeX: number, sizeY: number) {
+        this.ctx.fillStyle = color;
+        this.ctx.fillRect(startX, startY, sizeX, sizeY);
     }
 
     clearCanvas() {
@@ -22,14 +34,14 @@ class Canvas {
 class Arena {
     arenaBGColor: string;
     arenaBorderColor: string;
-    constructor(arenaBGColor: string, arenaBorderColor: string ) {
+    constructor(arenaBorderColor: string, arenaBGColor: string  = 'gray') {
       this.arenaBGColor = arenaBGColor;
       this.arenaBorderColor = arenaBorderColor;
     }
 
     wrapArena() {
 
-        
+
     }
 }
 
