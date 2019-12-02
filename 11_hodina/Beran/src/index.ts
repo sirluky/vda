@@ -92,6 +92,9 @@ class Snake {
         ctx.fillRect(this.x, this.y, this.width, this.height);
 
         ctx.clearRect(pozice[1].x, pozice[1].y, this.width, this.height);
+
+        ctx.font = "30px Arial";
+        ctx.fillText("Score: "+ delka, 10, 50);
         
         while (pozice.length > delka ){
             pozice.splice(0, 1);
