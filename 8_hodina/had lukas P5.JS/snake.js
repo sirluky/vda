@@ -18,6 +18,7 @@ class Had {
 			SNAKEWIDTH - 2,
 			SNAKEWIDTH - 2
 		);
+		
 
 		for (let { x, y } of this.ocas) {
 			fill(this.barva);
