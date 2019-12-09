@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ahoj!!</title>
+<script>
+var pocet = 0;
+
+function plus(){
+
+    document.getElementById("nadpis").innerHTML=pocet++;
+
+}
+function minus(){
+    pocet= pocet - 1;
+
+    document.getElementById("nadpis").innerHTML=pocet;
+}
+
+</script>
+</head>
+<body>
+    <h1 id=nadpis></h1>
+<button type="button" onclick="plus()">+</button>
+<button type="button" onclick="minus()">-</button>
+
+</body>
+</html>

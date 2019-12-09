@@ -1,0 +1,3 @@
+# úkol:
+* Vytvořte hru hada.
+

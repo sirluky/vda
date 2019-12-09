@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Poznámky</title>
+  <meta charset="UTF-8">
+  <script>
+    let todos = [];
+
+    function vypis() {
+      let seznamHodnoty = "";
+      for (let i = 0; i < todos.length; i++) {
+        seznamHodnoty = seznamHodnoty + vytvorPolozku(i);
+      }
+      document.getElementById("seznam").innerHTML = seznamHodnoty;
+    }
+
+    function pridat() {
+      if (document.getElementById("textInput").value !== "") {
+        todos.push(document.getElementById("textInput").value);
+        document.getElementById("textInput").value = "";
+        vypis();
+      }
+    }
+
+    function odebrat(i) {
+      todos.splice(i, 1);
+      vypis();
+    }
+
+    function vytvorPolozku(i) {
+      return "<li>" + todos[i] + " <span onClick=odebrat(" + i + ")>X</span></li>";
+    }
+  </script>
+</head>
+<body>
+<input type="text" id="textInput">
+<button type="button" onclick="pridat()">Přídat</button>
+<ul id="seznam">
+
+</ul>
+</body>
+</html>
