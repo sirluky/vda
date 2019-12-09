@@ -1,35 +1,30 @@
-class Had {
-	constructor(x, y, movement, barva = color(255, 255, 255)) {
+const SNAKEWIDTH = 30;
+export const SIRKAPOLE = 22;
+
+// @ts-ignore
+export let hraci: [{ body: Had; id: string }] = [];
+export let jidlo;
+
+export class Had {
+	private x: any;
+	private y: any;
+	private movement: any;
+	public smer: number;
+	private barva: any;
+	private ocas: any[];
+	private delkaHada: number;
+	public score: number;
+	public willDie: boolean;
+
+	constructor(x, y, barva) {
 		this.x = x;
 		this.y = y;
-		this.movement = movement;
 		this.smer = 0;
 		this.barva = barva;
 		this.ocas = [];
 		this.delkaHada = 1;
 		this.score = 0;
 		this.willDie = false;
-	}
-	show() {
-		fill(this.barva);
-		rect(
-			1 + this.x * SNAKEWIDTH,
-			1 + this.y * SNAKEWIDTH,
-			SNAKEWIDTH - 2,
-			SNAKEWIDTH - 2
-		);
-		
-
-		for (let { x, y } of this.ocas) {
-			fill(this.barva);
-
-			rect(
-				1 + x * SNAKEWIDTH,
-				1 + y * SNAKEWIDTH,
-				SNAKEWIDTH - 2,
-				SNAKEWIDTH - 2
-			);
-		}
 	}
 	move() {
 		this.ocas.push({ x: this.x, y: this.y });
@@ -75,7 +70,7 @@ class Had {
 		}
 	}
 	narazil() {
-		for (let had of hadi) {
+		for (let { body: had } of hraci) {
 			if (had === this) {
 				for (let { x, y } of had.ocas) {
 					if (x === had.x && y === had.y) {
@@ -105,4 +100,18 @@ class Had {
 		// if(this.)
 		// this.ocas = []
 	}
+}
+
+export function dejJidlo() {
+	jidlo = { x: Math.floor(random(SIRKAPOLE)), y: Math.floor(random(SIRKAPOLE)) };
+}
+
+export function random(max: number): number {
+	const val = Math.random() * max;
+	return val;
+}
+
+export function randomSnakeColor() {
+	const colors = ['lawngreen', 'mediumseagreen', 'aquamarine', 'blue', 'violet'];
+	return colors[Math.floor(random(colors.length))];
 }
