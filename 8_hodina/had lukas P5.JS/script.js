@@ -18,9 +18,9 @@ function draw() {
 	background("black");
 	for (let had of hadi) {
 		had.move();
+		had.narazil();
 		had.show();
 		had.sezer();
-		had.narazil();
 	}
 	fill("yellow");
 	rect(jidlo.x * SNAKEWIDTH, jidlo.y * SNAKEWIDTH, SNAKEWIDTH, SNAKEWIDTH);
