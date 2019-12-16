@@ -26,7 +26,7 @@ class App extends React.Component<{}, {coins:any}> {
       <div className="App">
         <table>
           {this.state.coins.map((coin: any)=>{
-            return <h2>{coin.price_usd}</h2>
+            return <tr><td>{coin.name}</td><td>{coin.price_usd}</td></tr>
           })}
         </table>
       </div>
