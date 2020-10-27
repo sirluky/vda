@@ -50,4 +50,7 @@ car["model"] = "Favorit"
 
 console.log(car);
 
-// 
+// pole
+
+let pole = [1, 2, 4, "a", "b", f];
+console.log(pole);
