@@ -1,4 +1,4 @@
-# 2_hodina Podmínky a cykly
+# 3_hodina Podmínky a cykly
 
 V materiálu je použito "document.write"
 tato funkce vypisuje do html sobrou text a bude fungovat pouze tam.
