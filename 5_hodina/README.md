@@ -9,7 +9,8 @@ https://www.okhelp.cz/programovani/class-javascript-tutorial-1/
 
 ## Úkoly
 
-vytvořte třídu garáž "garage" která bude umět přidávat.
+Vytvořte třídu garáž "garage" která bude umět.
+
 1. Třída bude mít název garáže který bude přijímat v konstruktoru (constructor)
 2. Třída bude obsahovat pole aut "cars" do které se budou vkládat auta pomocí vnitřní funkce třídy "addCar".
 3. Obsahovat Funkci "dumpCars" která vypíše všechny automobily a název garáže.
