@@ -7,6 +7,9 @@ https://www.w3schools.com/js/js_classes.asp
 Můžete začít číst až od kapitoly "Co je to třída?" ale když si přečtete a zkoušíte i ostatní tak to určitě nebude na škodu :)
 https://www.okhelp.cz/programovani/class-javascript-tutorial-1/
 
+npm install -g nodemon
+nodemon reseni.js
+
 ## Úkoly
 
 Vytvořte třídu garáž "garage" která bude umět.
