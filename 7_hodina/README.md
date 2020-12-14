@@ -5,7 +5,7 @@
 
 Předělejte úkol na pro poznámky TODO na třídy
 
-Vytvořte třídu todo která bude sponovat
+Vytvořte třídu todo která bude splňovat
 
 1. konstruktor s názem listu
 2. funkci createTodo která bude jako parametr přijímat text poznámky
