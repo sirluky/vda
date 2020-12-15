@@ -10,7 +10,7 @@ Vytvořte třídu todo která bude splňovat
 1. konstruktor s názem listu
 2. funkci createTodo která bude jako parametr přijímat text poznámky
 3. funkci remoteTodo která bude příjimat id pro smazání
-4. funkci dunpTodo která bude vracet seznam poznámek
+4. funkci dumpTodo která bude vracet seznam poznámek
 5. funkci changeState která bude přijímat id poznámky a zmení její stav
 
 třída by měla obsahovat pole s poznámky, odpojidajicí struktůrou nejlepe 
