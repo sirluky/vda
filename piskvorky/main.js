@@ -12,18 +12,18 @@ let player = 1; // 1, 2
 
 function playAI() {
     let { x, y } = generateAI();
-
-    if (playground[x][y] === "_") {
-
-    }
+    console.log(x);
+    console.log(y);
 
     play(x, y);
     player = 1;
 }
 
 function generateAI() {
-    const x = Math.floor(Math.random() * 10);
-    const y = Math.floor(Math.random() * 10);
+    const x = Math.floor(Math.random() * size);
+    const y = Math.floor(Math.random() * size);
+
+
 
     if (playground[x][y] === "_") {
         return { x, y }
